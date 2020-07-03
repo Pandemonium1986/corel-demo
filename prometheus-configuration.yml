@@ -12,3 +12,11 @@
         owner:        vagrant
         group:        vagrant
         mode:         '0644'
+      notify:        RESTART_DCO
+  handlers:
+    - name:           Restart docker compose stack
+      command:        docker-compose restart
+      args:
+        chdir:        /home/vagrant/docker
+        creates:      /path/to/database
+      listen:       RESTART_DCO
