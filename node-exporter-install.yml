@@ -1,9 +1,10 @@
 ---
 - name:             Prometheus node_exporter installation
   hosts:            all
+  become:           true
   gather_facts:     false
   vars:
-    pme_version:    "0.18.1"
+    pne_version:    "0.18.1"
   tasks:
     - name:         "Include prometheus_node_exporter"
       include_role:
