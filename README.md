@@ -1,4 +1,4 @@
-# Template
+# Corel Demo
 
 ![Ansible Role](https://img.shields.io/ansible/role/36274?logo=ansible)
 ![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/Pandemonium1986/ansible-role-init?logo=gitlab)
@@ -6,7 +6,7 @@
 ![Github license](https://img.shields.io/github/license/Pandemonium1986/ansible-role-init.svg?logo=github)
 ![Ansible Quality Score](https://img.shields.io/ansible/quality/36274?logo=ansible)
 
-One Paragraph of project description goes here
+Collection of resources used for demos on vagrant-corel
 
 ## Getting Started
 
