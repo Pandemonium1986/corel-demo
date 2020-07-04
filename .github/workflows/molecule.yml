@@ -1,5 +1,5 @@
 ---
-name:                     Molecule Execution
+name:                          Molecule Execution
 on:
   push:
     branches:
@@ -10,30 +10,41 @@ on:
       - master
 # defaults:
 #   run:
-#     shell:              bash
-#     working-directory:  roles/prometheus_node_exporter
+#     shell:                   bash
+#     working-directory:       roles/prometheus_node_exporter
 jobs:
   molecule:
-    name:                 Molecule Job
-    runs-on:              ubuntu-18.04
+    name:                      Molecule Job
+    runs-on:                   ubuntu-18.04
     strategy:
-      max-parallel:       4
+      max-parallel:            4
       matrix:
         python-version:
           - 3.6
     steps:
-      - uses:             actions/checkout@v2
+      - uses:                  actions/checkout@v2
+      - name:                  Set up Python ${{ matrix.python-version }}
+        uses:                  actions/setup-python@v2
         with:
-          path:           roles/prometheus_node_exporter
-      - name:             Set up Python ${{ matrix.python-version }}
-        uses:             actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
-      - name:             Install dependencies
-        run:              |
-          sudo apt install docker
+          python-version:      ${{ matrix.python-version }}
+      - name:                  Install dependencies
+        run:                   |
+          curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
+          sudo apt remove python3-yaml
+          sudo python3 /tmp/get-pip.py
           sudo python3 -m pip install --upgrade pip
-          sudo python3 -m pip install molecule[docker]
-      - name:             Test with molecule
-        run:              |
-          molecule test
+          sudo python3 -m pip install wheel setuptools molecule[docker]
+        working-directory:     /tmp
+      - name:                  Where am I
+        run:                   |
+          echo $GITHUB_WORKSPACE
+          pwd
+          ls -la
+      - name:                  Test with molecule
+        run:                   |
+          molecule converge
+          molecule verify
+        env:
+          PY_COLORS:           '1'
+          ANSIBLE_FORCE_COLOR: '1'
+        working-directory:     ./roles/prometheus_node_exporter
