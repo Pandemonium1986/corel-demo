@@ -1,27 +1,39 @@
 ---
-name: Molecule Test
-on: [push]
+name:                     Molecule Execution
+on:
+  push:
+    branches:
+      - develop
+      - keep/demo
+  pull_request:
+    branches:
+      - master
+# defaults:
+#   run:
+#     shell:              bash
+#     working-directory:  roles/prometheus_node_exporter
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  molecule:
+    name:                 Molecule Job
+    runs-on:              ubuntu-18.04
     strategy:
-      max-parallel: 4
+      max-parallel:       4
       matrix:
-        python-version: [3.6, 3.7]
-
+        python-version:
+          - 3.6
     steps:
-      - uses: actions/checkout@v1
+      - uses:             actions/checkout@v2
         with:
-          path: molecule_demo
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v1
+          path:           roles/prometheus_node_exporter
+      - name:             Set up Python ${{ matrix.python-version }}
+        uses:             actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install dependencies
-        run: |
+      - name:             Install dependencies
+        run:              |
           sudo apt install docker
-          python3 -m pip install --upgrade pip
-          python3 -m pip install -r requirements.txt
-      - name: Test with molecule
-        run: |
+          sudo python3 -m pip install --upgrade pip
+          sudo python3 -m pip install molecule[docker]
+      - name:             Test with molecule
+        run:              |
           molecule test
