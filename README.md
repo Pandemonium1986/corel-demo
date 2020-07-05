@@ -1,10 +1,8 @@
 # Corel Demo
 
-![Ansible Role](https://img.shields.io/ansible/role/36274?logo=ansible)
-![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/Pandemonium1986/ansible-role-init?logo=gitlab)
-![GitHub release](https://img.shields.io/github/release/Pandemonium1986/ansible-role-init.svg?logo=github)
-![Github license](https://img.shields.io/github/license/Pandemonium1986/ansible-role-init.svg?logo=github)
-![Ansible Quality Score](https://img.shields.io/ansible/quality/36274?logo=ansible)
+![Github pipeline status](https://github.com/Pandemonium1986/corel-demo/workflows//Molecule%20-%20Branches%20actions/badge.svg)
+![GitHub release](https://img.shields.io/github/release/Pandemonium1986/corel-demo.svg?logo=github)
+![Github license](https://img.shields.io/github/license/Pandemonium1986/corel-demo.svg?logo=github)
 
 Collection of resources used for demos on vagrant-corel
 
