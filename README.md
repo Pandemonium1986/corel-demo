@@ -8,71 +8,32 @@ Collection of resources used for demos on vagrant-corel
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will allow you to play the corel demo as part of the GitOps webinar.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Make sure that awx is publicly accessible.  
+`Port forwarding 8086 -> 80`
 
-```yaml
-Give examples
-```
+## Running the demo
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```yaml
-Give the example
-```
-
-And repeat
-
-```yaml
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```yaml
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```yaml
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
--   [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/index.html) - Provisioning
--   [Vagrant](https://www.vagrantup.com/downloads.html) - To build and manage the box.
--   [VirtualBox](https://www.virtualbox.org/wiki/Downloads) - The only provider available.
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+-   [ ] Start the two vagrant boxes.
+-   [ ] Get the github [token](http://192.168.66.100/#/templates/job_template/9?template_search=page_size:20;order_by:name;type:workflow_job_template,job_template) for awx and modify it in the [hooks](https://github.com/Pandemonium1986/corel-demo/settings/hooks) section of the project.
+-   [ ] Explain the purpose of the demo.
+-   Gitops approach to configuration management (Tower Graph).
+-   Gitops approach to application deployment (Node Graph).
+-   [ ] Show Awx.
+-   [ ] Show Prometheus.
+-   [ ] Show Grafana.
+-   [ ] Start the demo with the presentation of the prometheus-configuration.yml playbook.
+-   [ ] Generate awx_bearer_token
+-   [ ] Generate branch (already exists)
+-   [ ] Push awx_bearer_token 😱.
+-   [ ] Pull Request.
+-   [ ] Closing the Pr.
+-   [ ] Check the Webhook.
+-   [ ] Check the Awx job.
+-   [ ] Check the Grafana dashboard.
 
 ## Authors
 
@@ -83,8 +44,3 @@ See also the list of [contributors](https://github.com/your/project/contributors
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details
-
-## Source
-
--   [PurpleBooth/README-Template.md](https://gist.githubusercontent.com/PurpleBooth/109311bb0361f32d87a2/raw/8254b53ab8dcb18afc64287aaddd9e5b6059f880/README-Template.md/)
--   [PurpleBooth/Good-CONTRIBUTING.md-template.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426)
