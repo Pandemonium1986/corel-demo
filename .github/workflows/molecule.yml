@@ -5,6 +5,7 @@ on:
     branches:
       - develop
       - keep/demo
+      - demo/node
 #  pull_request:
 #    branches:
 #      - master
