@@ -17,6 +17,8 @@ Make sure that awx is publicly accessible.
 
 ## Running the demo
 
+#### Configuration
+
 -   [ ] Start the two vagrant boxes.
 -   [ ] Get the github [token](http://192.168.66.100/#/templates/job_template/9?template_search=page_size:20;order_by:name;type:workflow_job_template,job_template) for awx and modify it in the [hooks](https://github.com/Pandemonium1986/corel-demo/settings/hooks) section of the project.
 -   [ ] Explain the purpose of the demo.
@@ -27,13 +29,30 @@ Make sure that awx is publicly accessible.
 -   [ ] Show Grafana.
 -   [ ] Start the demo with the presentation of the prometheus-configuration.yml playbook.
 -   [ ] Generate awx_bearer_token
--   [ ] Generate branch (already exists)
+-   [ ] Generate branch demo/configuration
 -   [ ] Push awx_bearer_token 😱.
--   [ ] Pull Request.
+-   [ ] Pull Request (No github actions).
 -   [ ] Closing the Pr.
 -   [ ] Check the Webhook.
 -   [ ] Check the Awx job.
 -   [ ] Check the Grafana dashboard.
+
+#### Node exporter
+
+-   [ ] Continue the demo with with the presentation of the node-exporter-install playbook.
+-   Show playbook.yml
+-   Show molecule.yml
+-   Show workflows/molecule.yml
+-   [ ] Generate branch demo/node
+-   [ ] Modify the default version of pne (1.0.X).
+-   [ ] Pull Request (github actions).
+-   [ ] Check actions results.
+-   [ ] Check the Webhook (is not triggered).
+-   [ ] Check the Awx job (is not triggered).
+-   [ ] Modify the default version of pne (1.0.1).
+-   [ ] Execute the job manually.
+-   [ ] Check the Grafana dashboard.
+-   [ ] Check actions results.
 
 ## Authors
 
