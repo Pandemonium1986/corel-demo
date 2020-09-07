@@ -12,7 +12,7 @@ These instructions will allow you to play the corel demo as part of the GitOps w
 
 ### Prerequisites
 
-Make sure that awx is publicly accessible.  
+Make sure that awx is publicly accessible.  YEAH 
 `Port forwarding 8086 -> 80`
 
 ## Running the demo
