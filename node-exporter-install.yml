@@ -4,7 +4,7 @@
   become:           true
   gather_facts:     false
   vars:
-    pne_version:    "0.18.1"
+    pne_version:    "1.0.X"
   tasks:
     - name:         "Include prometheus_node_exporter"
       include_role:
