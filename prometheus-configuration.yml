@@ -3,7 +3,7 @@
   hosts:              all
   gather_facts:       false
   vars:
-    awx_bearer_token: "XXXXXXXXXXXXXXXXXXX"
+    awx_bearer_token: "hmaZVgppbW29UpnFNseA8NuEPB7vOQ"
   tasks:
     - name:           Ensure Prometheus is configured
       template:
