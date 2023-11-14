@@ -1,13 +1,13 @@
 ---
 galaxy_info:
-  role_name:           prometheus_node_exporter
-  author:              Michael Maffait
-  description:         Install Prometheus node_exporter
+  role_name: prometheus_node_exporter
+  author: Michael Maffait
+  description: Install Prometheus node_exporter
   # company:           your company (optional)
-  license:             MIT
+  license: MIT
   min_ansible_version: 2.9
-  github_branch:       master
+  github_branch: master
   platforms:
-    - name:            EL
-      versions:        [ '8' ]
-  galaxy_tags:         [ 'automation', 'prometheus', 'system' ]
+    - name: EL
+      versions: ["8"]
+  galaxy_tags: ["automation", "prometheus", "system"]

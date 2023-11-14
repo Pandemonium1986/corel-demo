@@ -1,22 +1,22 @@
 ---
-- name:               Prometheus configuration
-  hosts:              all
-  gather_facts:       false
+- name: Prometheus configuration
+  hosts: all
+  gather_facts: false
   vars:
     awx_bearer_token: "XXXXXXXXXXXXXXXXXXX"
   tasks:
-    - name:           Ensure Prometheus is configured
+    - name: Ensure Prometheus is configured
       template:
-        src:          prometheus.yml.j2
-        dest:         /home/vagrant/docker/prometheus.yml
-        owner:        vagrant
-        group:        vagrant
-        mode:         '0644'
-      notify:        RESTART_DCO
+        src: prometheus.yml.j2
+        dest: /home/vagrant/docker/prometheus.yml
+        owner: vagrant
+        group: vagrant
+        mode: "0644"
+      notify: RESTART_DCO
   handlers:
-    - name:           Restart docker compose stack
-      command:        docker-compose restart
+    - name: Restart docker compose stack
+      command: docker-compose restart
       args:
-        chdir:        /home/vagrant/docker
-        creates:      /path/to/database
-      listen:       RESTART_DCO
+        chdir: /home/vagrant/docker
+        creates: /path/to/database
+      listen: RESTART_DCO

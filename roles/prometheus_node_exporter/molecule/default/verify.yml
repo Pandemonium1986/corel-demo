@@ -1,15 +1,15 @@
 ---
 # This is an example playbook to execute Ansible tests.
 
-- name:        Verify
-  hosts:       all
+- name: Verify
+  hosts: all
   tasks:
-  - name:      Example assertion
-    assert:
-      that:    true
-  - name:      Check whether port 9100 is available
-    wait_for:
-      port:  9100
-      # port:    9101
-      state:   started
-      timeout: 1
+    - name: Example assertion
+      assert:
+        that: true
+    - name: Check whether port 9100 is available
+      wait_for:
+        port: 9100
+        # port:    9101
+        state: started
+        timeout: 1
